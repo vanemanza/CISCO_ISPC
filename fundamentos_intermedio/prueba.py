@@ -15,8 +15,10 @@ print(type(path))
 
 # Solución 1:
 # agregar una carpeta q contenga el modulo a la variable path
-path.append('../Modulo1/paquetes')
-import module #no pude !!! :(
+#path.append('../Modulo1/paquetes')
+#import module #no pude !!! :(
+
+from Modulo_1.paquetes.carpeta_b import module
 
 zeroes = [0 for i in range(5)]
 ones = [1 for i in range(5)]
