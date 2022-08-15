@@ -103,3 +103,28 @@ print(len(platform.python_version_tuple()))
 
 
 
+
+Funciones seleccionadas del módulo math: continuación
+Existe otro grupo de las funciones math relacionadas con la exponenciación:
+
+e → una constante con un valor que es una aproximación del número de Euler (e).
+exp(x) → encontrar el valor de ex.
+log(x) → el logaritmo natural de x.
+log(x, b) → el logaritmo de x con base b.
+log10(x) → el logaritmo decimal de x (más preciso que log(x, 10)).
+log2(x) → el logaritmo binario de x (más preciso que log(x, 2)).
+Nota: la función pow():
+
+pow(x, y) → encuentra el valor de xy (toma en cuenta los dominios).
+Esta es una función incorporada y no se tiene que importar.
+
+El último grupo consta de algunas funciones de propósito general como:
+
+ceil(x) → devuelve el entero más pequeño mayor o igual que x.
+floor(x) → el entero más grande menor o igual que x.
+trunc(x) → el valor de x truncado a un entero (ten cuidado, no es equivalente a ceil o floor).
+factorial(x) → devuelve x! (x tiene que ser un valor entero y no negativo).
+hypot(x, y) → devuelve la longitud de la hipotenusa de un triángulo rectángulo con las longitudes de los catetos iguales a (x) y (y) (lo mismo que sqrt(pow(x, 2) + pow(y, 2)) pero más preciso).
+Observa el código en el editor. Analiza el programa cuidadosamente.
+
+Demuestra las diferencias fundamentales entre ceil(), floor() y trunc().
