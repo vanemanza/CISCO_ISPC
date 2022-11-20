@@ -1,0 +1,13 @@
+
+Fundamentos de Python 2:
+Módulo 3
+Programación Orientada a Objetos
+
+En este módulo, aprenderás sobre:
+
+Conceptos básicos de programación orientada a objetos (POO).
+Las diferencias entre el enfoque procedimental y el orientado a objetos (motivaciones y beneficios).
+Clases, objetos, propiedades y métodos.
+Cómo diseñar clases reutilizables y crear objetos.
+Herencia y polimorfismo.
+Las excepciones como objetos.

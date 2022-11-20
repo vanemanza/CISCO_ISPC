@@ -1,0 +1,350 @@
+La función print()
+Observa la línea de código a continuación:
+
+print("¡Hola, Mundo!")
+
+
+La palabra print que puedes ver aquí es el nombre de una función. Eso no significa que dondequiera que aparezca esta palabra, será siempre el nombre de una función. El significado de la palabra proviene del contexto en el cual se haya utilizado la palabra.
+
+Probablemente hayas encontrado el término función muchas veces antes, durante las clases de matemáticas. Probablemente también puedes recordar varios nombres de funciones matemáticas, como seno o logaritmo.
+
+Las funciones de Python, sin embargo, son más flexibles y pueden contener más que sus parientes matemáticos.
+
+Una función (en este contexto) es una parte separada del código de computadora el cual es capaz de:
+
+Causar algún efecto (por ejemplo, enviar texto a la terminal, crear un archivo, dibujar una imagen, reproducir un sonido, etc.); esto es algo completamente inaudito en el mundo de las matemáticas.
+Evaluar un valor (por ejemplo, la raíz cuadrada de un valor o la longitud de un texto dado) y devolverlo como el resultado de la función; esto es lo que hace que las funciones de Python sean parientes de los conceptos matemáticos.
+Además, muchas de las funciones de Python pueden hacer las dos cosas anteriores juntas.
+
+¿De dónde provienen las funciones?
+
+Pueden venir de Python mismo. La función print es una de este tipo; dicha función es un valor agregado de Python junto con su entorno (está integrada); no tienes que hacer nada especial (por ejemplo, pedirle a alguien algo) si quieres usarla.
+Pueden provenir de uno o varios de los módulos de Python llamados complementos; algunos de los módulos vienen con Python, otros pueden requerir una instalación por separado, cual sea el caso, todos deben estar conectados explícitamente con el código (te mostraremos cómo hacer esto pronto).
+Puedes escribirlas tú mismo, colocando tantas funciones como desees y necesites dentro de su programa para hacerlo más simple, claro y elegante.
+El nombre de la función debe ser significativo (el nombre de la función print es evidente), imprime en la terminal.
+
+Si vas a utilizar alguna función ya existente, no podrás modificar su nombre, pero cuando comiences a escribir tus propias funciones, debes considerar cuidadosamente la elección de nombres.
+
+¿De dónde provienen las funciones?
+
+Pueden venir de Python mismo. La función print es una de este tipo; dicha función es un valor agregado de Python junto con su entorno (está integrada); no tienes que hacer nada especial (por ejemplo, pedirle a alguien algo) si quieres usarla.
+Pueden provenir de uno o varios de los módulos de Python llamados complementos; algunos de los módulos vienen con Python, otros pueden requerir una instalación por separado, cual sea el caso, todos deben estar conectados explícitamente con el código (te mostraremos cómo hacer esto pronto).
+Puedes escribirlas tú mismo, colocando tantas funciones como desees y necesites dentro de su programa para hacerlo más simple, claro y elegante.
+El nombre de la función debe ser significativo (el nombre de la función print es evidente), imprime en la terminal.
+
+Si vas a utilizar alguna función ya existente, no podrás modificar su nombre, pero cuando comiences a escribir tus propias funciones, debes considerar cuidadosamente la elección de nombres.
+
+
+Si deseas entregar uno o más argumentos a una función, colócalos dentro de los paréntesis. Si vas a utilizar una función que no tiene ningún argumento, aún tiene que tener los paréntesis.
+
+Nota: para distinguir las palabras comunes de los nombres de funciones, coloca un par de paréntesis vacíos después de sus nombres, incluso si la función correspondiente requiere uno o más argumentos. Esta es una medida estándar.
+
+La función de la que estamos hablando aquí es print().
+
+¿La función print() en nuestro ejemplo tiene algún argumento?
+
+Por supuesto que si, pero ¿qué son los argumentos?
+
+El único argumento entregado a la función print() en este ejemplo es una cadena:
+
+print("¡Hola, Mundo!")
+
+Como puedes ver, la cadena está delimitada por comillas - de hecho, las comillas forman la cadena, recortan una parte del código y le asignan un significado diferente.
+
+Podemos imaginar que las comillas significan algo así: el texto entre nosotros no es un código. No está diseñado para ser ejecutado, y se debe tomar tal como está.
+
+Casi cualquier cosa que ponga dentro de las comillas se tomará de manera literal, no como código, sino como datos. Intenta jugar con esta cadena en particular - puedes modificarla. Ingresa contenido nuevo o borra parte del contenido existente.
+
+
+Existe más de una forma de como especificar una cadena dentro del código de Python, pero por ahora, esta será suficiente.
+
+Hasta ahora, has aprendido acerca de dos partes importantes del código - la función y la cadena. Hemos hablado de ellos en términos de sintaxis, pero ahora es el momento de discutirlos en términos de semántica.
+
+El nombre de la función (print en este caso) junto con los paréntesis y los argumentos, forman la invocación de la función.
+
+Discutiremos esto en mayor profundidad más adelante, pero por lo pronto, arrojaremos un poco más de luz al asunto.
+
+print("¡Hola, Mundo!")
+
+
+¿Qué sucede cuando Python encuentra una invocación como la que está a continuación?
+
+nombre_función(argumento)
+
+
+Veamos:
+
+Primero, Python comprueba si el nombre especificado es legal (explora sus datos internos para encontrar una función existente del nombre; si esta búsqueda falla, Python cancela el código).
+En segundo lugar, Python comprueba si los requisitos de la función para el número de argumentos le permiten invocar la función de esta manera (por ejemplo, si una función específica exige exactamente dos argumentos, cualquier invocación que entregue solo un argumento se considerará errónea y abortará la ejecución del código).
+Tercero, Python deja el código por un momento y salta dentro de la función que se desea invocar; por lo tanto, también toma los argumentos y los pasa a la función.
+Cuarto, la función ejecuta el código, provoca el efecto deseado (si lo hubiera), evalúa el (los) resultado(s) deseado(s) y termina la tarea.
+Finalmente, Python regresa al código (al lugar inmediatamente después de la invocación) y reanuda su ejecución.
+
+Tres preguntas importantes deben ser respondidas antes de continuar:
+
+1. ¿Cuál es el efecto que causa la función print()?
+
+El efecto es muy útil y espectacular. La función:
+
+Toma los argumentos (puede aceptar más de un argumento y también puede aceptar menos de un argumento).
+Los convierte en un formato legible para el ser humano si es necesario (como puedes sospechar, las cadenas no requieren esta acción, ya que la cadena ya es legible).
+Envía los datos resultantes al dispositivo de salida (generalmente la consola); en otras palabras, cualquier cosa que se ponga en la función de print() aparecerá en la pantalla.
+No es de extrañar entonces, que de ahora en adelante, utilizarás print() muy intensamente para ver los resultados de tus operaciones y evaluaciones.
+
+2. ¿Qué argumentos espera print()?
+
+Cualquiera. Te mostraremos pronto que print() puede operar con prácticamente todos los tipos de datos ofrecidos por Python. Cadenas, números, caracteres, valores lógicos, objetos: cualquiera de estos se puede pasar con éxito a print().
+
+
+3. ¿Qué valor evalúa la función print()?
+
+Ninguno. Su efecto es suficiente - print() no evalúa nada.
+
+Ya has visto un programa de computadora que contiene una invocación de función. La invocación de una función es uno de los muchos tipos posibles de instrucciones de Python.
+
+Por supuesto, cualquier programa complejo generalmente contiene muchas más instrucciones que una. La pregunta es, ¿Cómo se acopla más de una instrucción en el código de Python?
+
+La sintaxis de Python es bastante específica en esta área. A diferencia de la mayoría de los lenguajes de programación, Python requiere que no haya más de una instrucción por línea.
+
+Una línea puede estar vacía (por ejemplo, puede no contener ninguna instrucción) pero no debe contener dos, tres o más instrucciones. Esto está estrictamente prohibido.
+
+Nota: Python hace una excepción a esta regla: permite que una instrucción se extienda por más de una línea (lo que puede ser útil cuando el código contiene construcciones complejas).
+
+Vamos a expandir el código un poco, puedes verlo en el editor. Ejecútalo y observa lo que aparece en la consola.
+
+Tu consola Python ahora debería verse así:
+
+La Witsi Witsi Araña subió a su telaraña.
+Vino la lluvia y se la llevó.
+salida
+
+Esta es una buena oportunidad para hacer algunas observaciones:
+
+El programa invoca la función print() dos veces, como puedes ver hay dos líneas separadas en la consola: esto significa que print() comienza su salida desde una nueva línea cada vez que comienza su ejecución. Puedes cambiar este comportamiento, pero también puedes usarlo a tu favor.
+Cada invocación de print() contiene una cadena diferente, como su argumento y el contenido de la consola lo reflejan, esto significa que las instrucciones en el código se ejecutan en el mismo orden en que se colocaron en el archivo fuente; no se ejecuta la siguiente instrucción hasta que se complete la anterior (hay algunas excepciones a esta regla, pero puedes ignorarlas por ahora).
+
+print("La Witsi Witsi Araña subió a su telaraña.")
+print("Vino la lluvia y se la llevó.")
+
+Hemos cambiado un poco el ejemplo: hemos agregado una invocación vacía de la función print(). La llamamos vacía porque no hemos agregado ningún argumento a la función.
+
+Lo puedes ver en la ventana del editor. Ejecuta el código.
+
+¿Qué ocurre?
+
+Si todo sale bien, deberías ver algo como esto:
+
+La Witsi Witsi Araña subió a su telaraña.
+
+Vino la lluvia y se la llevó.
+salida
+
+Como puedes ver, la invocación de print() vacía no esta tan vacía como se esperaba - genera una línea vacía (esta interpretación también es correcta) su salida es solo una nueva línea.
+
+Esta no es la única forma de producir una nueva línea en la consola de salida. Enseguida mostraremos otra manera.
+
+print("La Witsi Witsi Araña subió a su telaraña.")
+print()    
+print("Vino la lluvia y se la llevó.")
+
+ los caracteres de escape y nueva línea
+Hemos modificado el código de nuevo. Obsérvalo con cuidado.
+
+Hay dos cambios muy sutiles: hemos insertado un par extraño de caracteres dentro del texto. Se ven así: \n.
+
+
+Curiosamente, mientras tu ves dos caracteres, Python ve solo uno.
+
+La barra invertida (\) tiene un significado muy especial cuando se usa dentro de las cadenas, es llamado el carácter de escape.
+
+La palabra escape debe entenderse claramente: significa que la serie de caracteres en la cadena se escapa (detiene) por un momento (un momento muy corto) para introducir una inclusión especial.
+
+En otras palabras, la barra invertida no significa nada, sino que es solo un tipo de anuncio, de que el siguiente carácter después de la barra invertida también tiene un significado diferente.
+
+La letra n colocada después de la barra invertida proviene de la palabra newline (nueva línea).
+
+Tanto la barra diagonal inversa como la n forman un símbolo especial denominado carácter de nueva línea (newline character), que incita a la consola a iniciar una nueva línea de salida.
+
+Ejecuta el código. La consola ahora debería verse así:
+
+La Witsi Witsi Araña
+subió a su telaraña.
+
+Vino la lluvia 
+y se la llevó.
+salida
+
+Como se puede observar, aparecen dos nuevas líneas en la canción infantil, en los lugares donde se ha utilizado \n.
+
+print("La Witsi Witsi Araña\nsubió a su telaraña.\n")
+print()    
+print("Vino la lluvia\ny se la llevó.")
+
+
+El utilizar la diagonal invertida tiene dos características importantes:
+
+1. Si deseas colocar solo una barra invertida dentro de una cadena, no olvides su naturaleza de escape: tienes que duplicarla, por ejemplo, la siguiente invocación causará un error:
+
+print("\")
+
+
+Mientras que esta no lo hará:
+
+print("\\")
+
+
+2. No todos los pares de escape (la diagonal invertida junto con otro carácter) significan algo.
+
+
+Experimenta con el código en el editor, ejecútalo y observa lo que sucede.
+
+print("La Witsi Witsi Araña\nsubió a su telaraña.")
+print()
+print("Vino la lluvia\ny se la llevó.")
+
+ utilizando argumentos múltiples
+Hasta ahora se ha probado el comportamiento de la función print() sin argumentos y con un argumento. También vale la pena intentar alimentar la función print() con más de un argumento.
+
+Observa la ventana del editor. Esto es lo que vamos a probar ahora:
+
+print("La Witsi Witsi Araña" , "subió" , "a su telaraña.")
+
+
+Hay una invocación de la función print() pero contiene tres argumentos. Todos ellos son cadenas.
+
+Los argumentos están separados por comas. Se han rodeado de espacios para hacerlos más visibles, pero no es realmente necesario y no se hará más.
+
+En este caso, las comas que separan los argumentos desempeñan un papel completamente diferente a la coma dentro de la cadena. El primero es una parte de la sintaxis de Python, el segundo está destinado a mostrarse en la consola.
+
+Si vuelves a observar el código, verás que no hay espacios dentro de las cadenas.
+
+Ejecuta el código y observa lo que pasa.
+
+La consola ahora debería mostrar el siguiente texto:
+
+La Witsi Witsi Araña subió a su telaraña.
+salida
+
+Los espacios, removidos de las cadenas, han vuelto a aparecer. ¿Puedes explicar porque?
+
+Dos conclusiones surgen de este ejemplo:
+
+Una función print() invocada con más de un argumento genera la salida en una sola línea.
+La función print() coloca un espacio entre los argumentos emitidos por iniciativa propia.
+
+print("La Witsi Witsi Araña" , "subió" , "a su telaraña.")
+
+la manera posicional de pasar argumentos
+Ahora que sabes un poco acerca de la función print() y como personalizarla, te mostraremos como cambiarla.
+
+Deberías de poder predecir la salida sin ejecutar el código en el editor.
+
+La forma en que pasamos los argumentos a la función print() es la más común en Python, y se denomina manera posicional (este nombre proviene del hecho de que el significado del argumento está dictado por su posición, por ejemplo, el segundo argumento se emitirá después del primero, y no al revés).
+
+Ejecuta el código y verifica si la salida coincide con tus predicciones.
+
+print("Mi nombre es", "Python.")
+print("Monty Python.")
+
+los argumentos de palabra clave
+Python ofrece otro mecanismo para transmitir o pasar los argumentos, que puede ser útil cuando se desea convencer a la función print() de que cambie su comportamiento un poco.
+
+No se va a explicar en profundidad ahora. Se planea hacer esto cuando se trate el tema de funciones. Por ahora, simplemente queremos mostrarte como funciona. Siéntete libre de utilizarlo en tus propios programas.
+
+El mecanismo se llama argumentos de palabra clave. El nombre se deriva del hecho de que el significado de estos argumentos no se toma de su ubicación (posición) sino de la palabra especial (palabra clave) utilizada para identificarlos.
+
+La función print() tiene dos argumentos de palabra clave que se pueden utilizar para estos propósitos. El primero de ellos se llama end.
+
+En la ventana del editor se puede ver un ejemplo muy simple de como utilizar un argumento de palabra clave.
+
+Para utilizarlo es necesario conocer algunas reglas:
+
+Un argumento de palabra clave consta de tres elementos: una palabra clave que identifica el argumento (end - termina aquí); un signo de igual (=); y un valor asignado a ese argumento.
+Cualquier argumento de palabra clave debe ponerse después del último argumento posicional (esto es muy importante).
+
+En nuestro ejemplo, hemos utilizado el argumento de palabra clave end y lo hemos igualado a una cadena que contiene un espacio.
+
+Ejecuta el código para ver como funciona.
+
+La consola ahora debería mostrar el siguiente texto:
+
+Mi nombre es Python. Monty Python.
+salida
+
+Como puedes ver, el argumento de palabra clave end determina los caracteres que la función print() envía a la salida una vez que llega al final de sus argumentos posicionales.
+
+El comportamiento predeterminado refleja la situación en la que el argumento de la palabra clave end se usa implícitamente de la siguiente manera: end="\n".
+
+print("Mi nombre es", "Python.", end=" ")
+print("Monty Python.")
+
+Y ahora, es el momento de intentar algo más difícil.
+
+Si observas detenidamente, verás que hemos utilizado el argumento end , pero su cadena asignada está vacía (no contiene ningún carácter).
+
+¿Qué pasará ahora? Ejecuta el programa en el editor para averiguarlo.
+
+Ya que al argumento end se le ha asignado a nada, la función print() tampoco genera nada, una vez que se hayan agotado los argumentos posicionales.
+
+La consola ahora debería mostrar el siguiente texto:
+
+Mi nombre es Monty Python.
+salida
+
+Nota: no se han enviado nuevas líneas a la salida.
+
+La cadena asignada al argumento de la palabra clave end puede ser de cualquier longitud. Experimenta con ello si gustas.
+
+print("Mi nombre es ", end="")
+print("Monty Python.")
+los argumentos de palabra clave
+Se estableció anteriormente que la función print() separa los argumentos generados con espacios. Este comportamiento también puede ser cambiado.
+
+El argumento de palabra clave que puede hacer esto se denomina sep (separador).
+
+Observa el código en el editor y ejecútalo.
+
+El argumento sep entrega el siguiente resultado:
+
+Mi-nombre-es-Monty-Python.
+salida
+
+La función print() ahora utiliza un guion, en lugar de un espacio, para separar los argumentos generados.
+
+Nota: el valor del argumento sep también puede ser una cadena vacía. Pruébalo tu mismo.
+print("Mi", "nombre", "es", "Monty", "Python.", sep="-")
+Ambos argumentos de palabras clave pueden mezclarse en una invocación, como aquí en la ventana del editor.
+
+El ejemplo no tiene mucho sentido, pero representa visiblemente las interacciones entre end y sep.
+
+¿Puedes predecir la salida?
+
+Ejecuta el código y ve si coincide con tus predicciones.
+
+Ahora que comprendes la función print(), estás listo para aprender cómo almacenar y procesar datos en Python.
+
+Sin print(), no se podría ver ningún resultado.
+
+print("Mi", "nombre", "es", sep="_", end="*")
+print("Monty", "Python.", sep="*", end="*\n")
+
+Puntos Clave
+1. La función print() es una función integrada imprime/envía un mensaje específico a la pantalla/ventana de consola.
+
+2. Las funciones integradas, al contrario de las funciones definidas por el usuario, están siempre disponibles y no tienen que ser importadas. Python 3.7.1 viene con 69 funciones incorporadas. Puedes encontrar su lista completa en orden alfabético en Python Standard Library.
+
+3. Para llamar a una función (invocación de función), debe utilizarse el nombre de la función seguido de un paréntesis. Puedes pasar argumentos a una función colocándolos dentro de los paréntesis. Se Deben separar los argumentos con una coma, por ejemplo, print("¡Hola,", "Mundo!"). una función print() "vacía" imprime una línea vacía a la pantalla.
+
+4. Las cadenas de Python están delimitadas por comillas, por ejemplo, "Soy una cadena", o 'Yo soy una cadena, también'.
+
+5. Los programas de computadora son colecciones de instrucciones. Una instrucción es un comando para realizar una tarea específica cuando se ejecuta, por ejemplo, para imprimir un determinado mensaje en la pantalla.
+
+6. En las cadenas de Python, la barra diagonal inversa (\) es un carácter especial que anuncia que el siguiente carácter tiene un significado diferente, por ejemplo, \n (el carácter de nueva línea) comienza una nueva línea de salida.
+
+7. Los argumentos posicionales son aquellos cuyo significado viene dictado por su posición, por ejemplo, el segundo argumento se emite después del primero, el tercero se emite después del segundo, etc.
+
+8. Los argumentos de palabra clave son aquellos cuyo significado no está dictado por su ubicación, sino por una palabra especial (palabra clave) que se utiliza para identificarlos.
+
+9. Los parámetros end y sep se pueden usar para dar formato la salida de la función print(). El parámetro sep especifica el separador entre los argumentos emitidos (por ejemplo, print("H", "E", "L", "L", "O", sep="-"), mientras que el parámetro end especifica que imprimir al final de la declaración de impresión.
+
+

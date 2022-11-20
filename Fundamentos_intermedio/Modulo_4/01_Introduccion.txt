@@ -1,0 +1,10 @@
+
+Fundamentos de Python 2:
+Módulo 4
+Misceláneo
+
+En este módulo, aprenderás sobre:
+
+Generadores, iteradores y cierres.
+Cómo trabajar con un sistema de archivos, un árbol de directorios y archivos.
+Módulos seleccionados de la biblioteca estándar de Python (os, datetime, time, y calendar).

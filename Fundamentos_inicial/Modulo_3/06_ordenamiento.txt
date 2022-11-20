@@ -1,0 +1,237 @@
+Ordenamiento Burbuja
+Ahora que puedes hacer malabarismos con los elementos de las listas, es hora de aprender como ordenarlos. Se han inventado muchos algoritmos de clasificación, que difieren mucho en velocidad, así como en complejidad. Vamos a mostrar un algoritmo muy simple, fácil de entender, pero desafortunadamente, tampoco es muy eficiente. Se usa muy raramente, y ciertamente no para listas extensas.
+
+Digamos que una lista se puede ordenar de dos maneras:
+
+Ascendente (o más precisamente, no descendente): si en cada par de elementos adyacentes, el primer elemento no es mayor que el segundo.
+Descendente (o más precisamente, no ascendente): si en cada par de elementos adyacentes, el primer elemento no es menor que el segundo.
+En las siguientes secciones, ordenaremos la lista en orden ascendente, de modo que los números se ordenen de menor a mayor.
+
+Aquí está la lista:
+
+8
+10
+6
+2
+4
+Intentaremos utilizar el siguiente enfoque: tomaremos el primer y el segundo elemento y los compararemos; si determinamos que están en el orden incorrecto (es decir, el primero es mayor que el segundo), los intercambiaremos; Si su orden es válido, no haremos nada. Un vistazo a nuestra lista confirma lo último: los elementos 01 y 02 están en el orden correcto, así como 8<10.
+
+Ahora observa el segundo y el tercer elemento. Están en las posiciones equivocadas. Tenemos que intercambiarlos:
+
+8
+6
+10
+2
+4
+
+Vamos más allá y observemos los elementos tercero y cuarto. Una vez más, esto no es lo que se supone que es. Tenemos que intercambiarlos:
+
+8
+6
+2
+10
+4
+
+Ahora comprobemos los elementos cuarto y quinto. Si, ellos también están en las posiciones equivocadas. Ocurre otro intercambio:
+
+8
+6
+2
+4
+10
+
+El primer paso a través de la lista ya está terminado. Todavía estamos lejos de terminar nuestro trabajo, pero algo curioso ha sucedido mientras tanto. El elemento más grande, 10, ya ha llegado al final de la lista. Ten en cuenta que este es el lugar deseado para el. Todos los elementos restantes forman un lío pintoresco, pero este ya está en su lugar.
+
+
+Ahora, por un momento, intenta imaginar la lista de una manera ligeramente diferente, es decir, de esta manera:
+
+10
+4
+2
+6
+8
+
+Observa - El 10 está en la parte superior. Podríamos decir que flotó desde el fondo hasta la superficie, al igual que las burbujas en una copa de champán. El método de clasificación deriva su nombre de la misma observación: se denomina ordenamiento de burbuja.
+
+Ahora comenzamos con el segundo paso a través de la lista. Miramos el primer y el segundo elemento, es necesario un intercambio:
+
+6
+8
+2
+4
+10
+
+Tiempo para el segundo y tercer elemento: también tenemos que intercambiarlos:
+
+6
+2
+8
+4
+10
+
+Ahora el tercer y cuarto elementos, y la segunda pasada, se completa, ya que 8 ya está en su lugar:
+
+6
+2
+4
+8
+10
+
+Comenzamos el siguiente pase inmediatamente. Observe atentamente el primer y el segundo elemento: se necesita otro cambio:
+
+2
+6
+4
+8
+10
+
+Ahora 6 necesita ir a su lugar. Cambiamos el segundo y el tercer elemento:
+
+2
+4
+6
+8
+10
+
+La lista ya está ordenada. No tenemos nada más que hacer. Esto es exactamente lo que queremos.
+
+Como puedes ver, la esencia de este algoritmo es simple: comparamos los elementos adyacentes y, al intercambiar algunos de ellos, logramos nuestro objetivo.
+
+Codifiquemos en Python todas las acciones realizadas durante un solo paso a través de la lista, y luego consideraremos cuántos pases necesitamos para realizarlo. No hemos explicado esto hasta ahora, pero lo haremos pronto.
+
+Ordenando una lista
+¿Cuántos pases necesitamos para ordenar la lista completa?
+
+Resolvamos este problema de la siguiente manera: introducimos otra variable, su tarea es observar si se ha realizado algún intercambio durante el pase o no. Si no hay intercambio, entonces la lista ya está ordenada, y no hay que hacer nada más. Creamos una variable llamada swapped, y le asignamos un valor de False para indicar que no hay intercambios. De lo contrario, se le asignará True.
+
+my_list = [8, 10, 6, 2, 4]  # lista a ordenar
+
+for i in range(len(my_list) - 1):  # necesitamos (5 - 1) comparaciones
+    if my_list[i] > my_list[i + 1]:  # compara elementos adyacentes
+        my_list[i], my_list[i + 1] = my_list[i + 1], my_list[i]  # Si terminamos aquí, tenemos que intercambiar elementos.
+
+
+Deberías poder leer y comprender este programa sin ningún problema:
+
+my_list = [8, 10, 6, 2, 4]  # lista a ordenar
+swapped = True  # Lo necesitamos verdadero (True) para ingresar al bucle while.
+
+while swapped:
+    swapped = False  # no hay intercambios hasta ahora
+    for i in range(len(my_list) - 1):
+        if my_list[i] > my_list[i + 1]:
+            swapped = True  # ¡ocurrió el intercambio!
+            my_list[i], my_list[i + 1] = my_list[i + 1], my_list[i]
+
+print(my_list)
+
+
+Ejecuta el programa y pruébalo.
+El ordenamiento burbuja - versión interactiva
+En el editor, puedes ver un programa completo, enriquecido por una conversación con el usuario, y que permite ingresar e imprimir elementos de la lista: El ordenamiento burbuja: versión final interactiva.
+
+Python, sin embargo, tiene sus propios mecanismos de clasificación. Nadie necesita escribir sus propias clases, ya que hay un número suficiente de herramientas listas para usar.
+
+Te explicamos este sistema de clasificación porque es importante aprender como procesar los contenidos de una lista y mostrarte como puede funcionar la clasificación real.
+
+Si quieres que Python ordene tu lista, puedes hacerlo de la siguiente manera:
+
+my_list = [8, 10, 6, 2, 4]
+my_list.sort()
+print(my_list)
+
+
+Es tan simple como eso.
+
+La salida del fragmento es la siguiente:
+
+[2, 4, 6, 8, 10]
+salida
+
+
+Como puedes ver, todas las listas tienen un método denominado sort(), que las ordena lo más rápido posible. Ya has aprendido acerca de algunos de los métodos de lista anteriormente, y pronto aprenderás más sobre otros.
+
+my_list = []
+swapped = True
+num = int(input("¿Cuántos elementos deseas ordenar?: "))
+
+for i in range(num):
+    val = float(input("Ingresa un elemento de la lista: "))
+    my_list.append(val)
+
+while swapped:
+    swapped = False
+    for i in range(len(my_list) - 1):
+        if my_list[i] > my_list[i + 1]:
+            swapped = True
+            my_list[i], my_list[i + 1] = my_list[i + 1], my_list[i]
+
+print("\nOrdenada:")
+print(my_list)
+
+Puntos Clave
+
+1. Puedes usar el método sort() para ordenar los elementos de una lista, por ejemplo:
+
+lst = [5, 3, 1, 2, 4]
+print(lst)
+
+lst.sort()
+print(lst)  # outputs: [1, 2, 3, 4, 5]
+
+
+2.También hay un método de lista llamado reverse(), que puedes usar para invertir la lista, por ejemplo:
+
+lst = [5, 3, 1, 2, 4]
+print(lst)
+
+lst.reverse()
+print(lst)  # salida: [4, 2, 1, 3, 5]
+
+Ejercicio 1
+
+¿Cuál es la salida del siguiente fragmento de código?
+
+lst = ["D", "F", "A", "Z"]
+lst.sort()
+
+print(lst)
+
+
+Revisar
+['A', 'D', 'F', 'Z']
+
+Ejercicio 2
+
+¿Cuál es la salida del siguiente fragmento de código?
+
+a = 3
+b = 1
+c = 2
+
+lst = [a, c, b]
+lst.sort()
+
+print(lst)
+
+
+Revisar
+[1, 2, 3]
+
+Ejercicio 3
+
+¿Cuál es la salida del siguiente fragmento de código?
+
+a = "A"
+b = "B"
+c = "C"
+d = " "
+
+lst = [a, b, c, d]
+lst.reverse()
+
+print(lst)
+
+
+Revisar
+[' ', 'C', 'B', 'A']

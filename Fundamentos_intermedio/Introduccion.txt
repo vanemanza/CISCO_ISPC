@@ -1,0 +1,77 @@
+
+Bienvenido a Fundamentos de Python 2
+Este curso es el segundo en una serie de dos cursos que te prepararán para el examen de certificación PCAP: Certified Associate in Python Programming en Pearson VUE.
+
+El curso comienza donde Fundamentos de Python 1 termina. Su principal objetivo es enseñarte las habilidades relacionadas con los aspectos más avanzados de la programación en Python, así como técnicas generales de codificación y la programación orientada a objetos (POO).
+
+El curso está recomendado para aspirantes a desarrolladores que estén interesados en seguir carreras relacionadas con el Desarrollo de Software, Seguridad, Redes, y el Internet de las Cosas (IoT).
+
+Temario del Curso
+En este curso aprenderás:
+
+Técnicas generales de codificación y mejores prácticas.
+Emplear programación orientada a objetos en Python.
+Cómo importar y usar módulos de Python.
+Cómo manejar las excepciones.
+Cómo procesar archivos.
+
+El curso se divide en 3 módulos:
+
+Módulo 1
+Módulos, paquetes y PIP
+Módulo 2
+Excepciones, Cadenas y Métodos de Listas
+Módulo 3
+Programación Orientada a Objetos y Procesamiento de Archivos en Python
+
+
+¿Por qué debería aprender PYTHON?
+Python es omnipresente y muchas personas usan numerosos dispositivos con tecnología de Python a diario, ya sea que se den cuenta o no. Ha habido millones (bueno, en realidad miles de millones) de líneas de código escritas en Python, lo que significa oportunidades casi ilimitadas para la reutilización de código y el aprendizaje de ejemplos bien elaborados. Además, existe una comunidad de Python grande y muy activa, siempre feliz de ayudar.
+
+También existen algunos factores que hacen que Python sea excelente para el aprendizaje:
+
+Es fácil de aprender: el tiempo necesario para aprender Python es más corto que para muchos otros lenguajes; esto significa que es posible iniciar la programación real más rápido.
+Es fácil de usar para escribir software nuevo; a menudo es posible escribir código más rápido cuando se usa Python.
+Es fácil de obtener, instalar e implementar: Python es gratuito, abierto y multiplataforma; no todos los lenguajes pueden presumir de eso.
+Completar este curso puede ser un trampolín para aprender cualquier otro lenguaje de programación y para explorar tecnologías que usan a Python como base (por ejemplo, Django). Este curso se distingue por su asequibilidad, amigabilidad y apertura para el estudiante.
+
+La primera parte comienza desde lo básico, guiándote paso a paso hacia los problemas complejos que se explican en esta parte, convirtiéndote en un creador de software responsable capaz de asumir diferentes desafíos en muchas posiciones en la industria de TI.
+
+
+
+¿Dónde se utiliza Python?
+¿Te acuerdas de Battlefield 2, Battlefield 2142 y Battlefield Heroes? Son juegos de estrategia y disparos en primera persona de EA DICE. Todos estos juegos usan Python para la lógica y los controles del servidor. Python se usa con frecuencia para crear juegos gratuitos de código abierto, por ejemplo, OpenRTS, PySol, Metin 2 o Frets On Fire, juegos famosos tipo Guitar Hero fueron escritos en pygame.
+
+¿Y los principales sitios web y servicios como Dropbox, UBER, Spotify, Pintrest y BuzzFeed? Si. Todos fueron escritos, en mayor o menor medida, en Python. ¿Otros ejemplos?
+
+Aplicaciones de Internet (BitTorrent, Jogger Publishing Assistant, TheCircle, TwistedMatrix)
+3D CAD/CAM (FreeCAD, Fandango, Blender, Vintech RCAM)
+Aplicaciones Empresariales (Odoo, Tryton, Picalo, LinOTP 2, RESTx)
+Aplicaciones de Imagen (Gnofract 4D, Gogh, imgSeek, MayaVi, VPython)
+Aplicaciones Móviles (Aarlogic C05/3, AppBackup, Pyroute)
+Aplicaciones de Oficina (calibre, faces, Notalon, pyspread)
+Administradores de Información Personal (BitPim, Narval, Prioritise, Task Coach, WikidPad)
+(Fuente: https://wiki.python.org/moin/PythonProjects)
+
+
+Generalmente, Python es una excelente opción para:
+
+Desarrollo Web (por ejemplo, los frameworks Django y Pyramid, micro-frameworks Flask y Bottle)
+Computación científica y numérica (por ejemplo, SciPy, una colección de paquetes con fines matemáticos, científicos y de ingeniería; Ipython, un shell interactivo que permite la edición y grabación de sesiones de trabajo)
+Educación (¡es un lenguaje brillante para enseñar programación! ¡Y es por eso que te ofrecemos este curso!)
+GUIs de Escritorio (por ejemplo, wxWidgets, Kivy, Qt)
+Desarrollo de software (control de compilación, gestión y pruebas: Scons, Buildbot, Apache Gump, Roundup, Trac)
+Aplicaciones empresariales (ERP y sistemas de comercio electrónico: Odoo, Tryton)
+(Fuente: https://www.python.org/about/apps)
+Y muchos otros proyectos y herramientas de desarrollo.
+
+Módulos, Paquetes y PIP
+
+En este módulo, aprenderás como:
+
+Importar y usar módulos de Python.
+Emplear algunos de los módulos más útiles de la biblioteca estándar de Python.
+Construir y usar paquetes de Python
+PIP (Instalador de Paquetes de Python) y cómo usarlo para instalar y desinstalar paquetes listos para usar de PyPI.
+
+

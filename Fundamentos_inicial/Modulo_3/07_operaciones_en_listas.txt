@@ -1,0 +1,467 @@
+La vida al interior de las listas
+Ahora queremos mostrarte una característica importante y muy sorprendente de las listas, que las distingue de las variables ordinarias.
+
+Queremos que lo memorices, ya que puede afectar tus programas futuros y causar graves problemas si se olvida o se pasa por alto.
+
+Echa un vistazo al fragmento en el editor.
+
+El programa:
+
+Crea una lista de un elemento llamada list_1.
+La asigna a una nueva lista llamada list_2.
+Cambia el único elemento de list_1.
+Imprime la list_2.
+La parte sorprendente es el hecho de que el programa mostrará como resultado: [2], no [1], que parece ser la solución obvia.
+
+
+Las listas (y muchas otras entidades complejas de Python) se almacenan de diferentes maneras que las variables ordinarias (escalares).
+
+Se podría decir que:
+
+El nombre de una variable ordinaria es el nombre de su contenido.
+El nombre de una lista es el nombre de una ubicación de memoria donde se almacena la lista.
+Lee estas dos líneas una vez más, la diferencia es esencial para comprender de que vamos a hablar a continuación.
+
+La asignación: list_2 = list_1 copia el nombre del arreglo no su contenido. En efecto, los dos nombres (list_1 y list_2) identifican la misma ubicación en la memoria de la computadora. Modificar uno de ellos afecta al otro, y viceversa.
+
+¿Cómo te las arreglas con eso?
+
+list_1 = [1]
+list_2 = list_1
+list_1[0] = 2
+print(list_2)
+
+Rebanadas Poderosas
+Afortunadamente, la solución está al alcance de tu mano: su nombre es rebanada.
+
+Una rebanada es un elemento de la sintaxis de Python que permite hacer una copia nueva de una lista, o partes de una lista.
+
+En realidad, copia el contenido de la lista, no el nombre de la lista.
+
+Esto es exactamente lo que necesitas. Echa un vistazo al fragmento de código a continuación:
+
+list_1 = [1]
+list_2 = list_1[:]
+list_1[0] = 2
+print(list_2)
+
+
+Su salida es [1].
+
+Esta parte no visible del código descrito como [:] puede producir una lista completamente nueva.
+
+Una de las formas más generales de la rebanada es la siguiente:
+
+my_list[start:end]
+
+Como puedes ver, se asemeja a la indexación, pero los dos puntos en el interior hacen una gran diferencia.
+
+Una rebanada de este tipo crea una nueva lista (de destino), tomando elementos de la lista de origen: los elementos de los índices desde el principio hasta el fin - 1.
+
+Nota: no hasta el fin, sino hasta fin-1. Un elemento con un índice igual a fin es el primer elemento el cual no participa en la segmentación.
+
+Es posible utilizar valores negativos tanto para el inicio como para el fin(al igual que en la indexación).
+
+Echa un vistazo al fragmento:
+
+my_list = [10, 8, 6, 4, 2]
+new_list = my_list[1:3]
+print(new_list)
+
+
+La lista new_list contendrá fin - inicio (3 - 1 = 2) elementos â los que tienen índices iguales a 1 y 2 (pero no 3).
+
+La salida del fragmento es: [8, 6]
+
+# Copiando la lista entera.
+list_1 = [1]
+list_2 = list_1[:]
+list_1[0] = 2
+print(list_2)
+
+# Copiando parte de la lista.
+my_list = [10, 8, 6, 4, 2]
+new_list = my_list[1:3]
+print(new_list)
+
+Rebanadas - índices negativos
+Observa el fragmento de código a continuación:
+
+my_list[start:end]
+
+
+Para confirmar:
+
+start es el índice del primer elemento incluido en la rebanada.
+end es el índice del primer elemento no incluido en la rebanada.
+
+Así es como los índices negativos funcionan en las rebanadas:
+
+my_list = [10, 8, 6, 4, 2]
+new_list = my_list[1:-1]
+print(new_list)
+
+
+El resultado del fragmento es:
+
+[8, 6, 4]
+salida
+
+
+Si start especifica un elemento que se encuentra más allá del descrito por end (desde el punto de vista inicial de la lista), la rebanada estará vacía:
+
+my_list = [10, 8, 6, 4, 2]
+new_list = my_list[-1:1]
+print(new_list)
+
+
+La salida del fragmento es:
+
+[]
+
+Si omites el start en tu rebanada, se supone que deseas obtener un segmento que comienza en el elemento con índice 0.
+
+En otras palabras, la rebanada sería de esta forma:
+
+my_list[:end]
+
+
+es un equivalente más compacto de:
+
+my_list[0:end]
+
+
+Observa el fragmento de código a continuación:
+
+my_list = [10, 8, 6, 4, 2]
+new_list = my_list[:3]
+print(new_list)
+
+
+Es por esto que su salida es: [10, 8, 6].
+
+Del mismo modo, si omites el end en tu rebanada, se supone que deseas que el segmento termine en el elemento con el índice len(my_list).
+
+En otras palabras, la rebanada sería de esta forma:
+
+my_list[start:]
+
+
+es un equivalente más compacto de:
+
+my_list[start:len(my_list)]
+
+
+Observa el siguiente fragmento de código:
+
+my_list = [10, 8, 6, 4, 2]
+new_list = my_list[3:]
+print(new_list)
+
+
+Por lo tanto, la salida es: [4, 2].
+
+Como hemos dicho anteriormente, el omitir el inicio y fin crea una copia de toda la lista:
+
+my_list = [10, 8, 6, 4, 2]
+new_list = my_list[:]
+print(new_list)
+
+
+El resultado del fragmento es: [10, 8, 6, 4, 2].
+
+La instrucción del descrita anteriormente puede eliminar más de un elemento de la lista a la vez, también puede eliminar rebanadas:
+
+my_list = [10, 8, 6, 4, 2]
+del my_list[1:3]
+print(my_list)
+
+
+Nota: En este caso, la rebanada ¡no produce ninguna lista nueva!
+
+La salida del fragmento es: [10, 4, 2].
+
+
+También es posible eliminar todos los elementos a la vez:
+
+my_list = [10, 8, 6, 4, 2]
+del my_list[:]
+print(my_list)
+
+
+La lista se queda vacía y la salida es: [].
+
+
+Al eliminar la rebanada del código, su significado cambia dramáticamente.
+
+Echa un vistazo:
+
+my_list = [10, 8, 6, 4, 2]
+del my_list
+print(my_list)
+
+
+La instrucción del eliminará la lista, no su contenido.
+
+La función print() de la última línea del código provocará un error de ejecución.
+
+Los operadores in y not in
+Python ofrece dos operadores muy poderosos, capaces de revisar la lista para verificar si un valor específico está almacenado dentro de la lista o no.
+
+Estos operadores son:
+
+elem in my_list
+elem not in my_list
+
+
+El primero de ellos (in) verifica si un elemento dado (el argumento izquierdo) está actualmente almacenado en algún lugar dentro de la lista (el argumento derecho) - el operador devuelve True en este caso.
+
+El segundo (not in) comprueba si un elemento dado (el argumento izquierdo) está ausente en una lista - el operador devuelve True en este caso.
+
+Observa el código en el editor. El fragmento muestra ambos operadores en acción. ¿Puedes adivinar su salida? Ejecuta el programa para comprobar si tenías razón.
+
+my_list = [0, 3, 12, 8, 2]
+
+print(5 in my_list)
+print(5 not in my_list)
+print(12 in my_list)
+
+Listas - algunos programas simples
+Ahora queremos mostrarte algunos programas simples que utilizan listas.
+
+El primero de ellos intenta encontrar el valor mayor en la lista. Mira el código en el editor.
+
+El concepto es bastante simple: asumimos temporalmente que el primer elemento es el más grande y comparamos la hipótesis con todos los elementos restantes de la lista.
+
+El código da como resultado el17(como se espera).
+
+El código puede ser reescrito para hacer uso de la forma recién introducida del bucle for:
+
+my_list = [17, 3, 11, 5, 1, 9, 7, 15, 13]
+largest = my_list[0]
+
+for i in my_list:
+    if i > largest:
+        largest = i
+
+print(largest)
+
+
+El programa anterior realiza una comparación innecesaria, cuando el primer elemento se compara consigo mismo, pero esto no es un problema en absoluto.
+
+El código da como resultado el 17 también (nada inusual).
+
+Si necesitas ahorrar energía de la computadora, puedes usar una rebanada:
+
+my_list = [17, 3, 11, 5, 1, 9, 7, 15, 13]
+largest = my_list[0]
+
+for i in my_list[1:]:
+    if i > largest:
+        largest = i
+
+print(largest)
+
+
+La pregunta es: ¿Cuál de estas dos acciones consume más recursos informáticos: solo una comparación o rebanar casi todos los elementos de una lista?
+
+my_list = [17, 3, 11, 5, 1, 9, 7, 15, 13]
+largest = my_list[0]
+
+for i in range(1, len(my_list)):
+    if my_list[i] > largest:
+        largest = my_list[i]
+
+print(largest)
+
+Ahora encontremos la ubicación de un elemento dado dentro de una lista:
+
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+to_find = 5
+found = False
+
+for i in range(len(my_list)):
+    found = my_list[i] == to_find
+    if found:
+        break
+
+if found:
+    print("Elemento encontrado en el índice", i)
+else:
+    print("ausente")
+
+
+Nota:
+
+El valor buscado se almacena en la variable to_find.
+El estado actual de la búsqueda se almacena en la variable found (True/False).
+Cuando found se convierte en True, se sale del bucle for.
+Supongamos que has elegido los siguientes números en la lotería: 3, 7, 11, 42, 34, 49.
+
+Los números que han salido sorteados son: 5, 11, 9, 42, 3, 49.
+
+La pregunta es: ¿A cuántos números le has atinado?
+
+Este programa te dará la respuesta:
+
+drawn = [5, 11, 9, 42, 3, 49]
+bets = [3, 7, 11, 42, 34, 49]
+hits = 0
+
+for number in bets:
+    if number in drawn:
+        hits += 1
+
+print(hits)
+
+
+Nota:
+
+La lista drawn almacena todos los números sorteados.
+La lista bets almacena los números con que se juega.
+La variable hits cuenta tus aciertos.
+La salida del programa es: 4.
+
+Puntos Clave
+
+1. Si tienes una lista list_1, y la siguiente asignación: list_2 = list_1 esto no hace una copia de la lista list_1, pero hace que las variables list_1 y list_2 apunten a la misma lista en la memoria. Por ejemplo:
+
+vehicles_one = ['carro', 'bicicleta', 'motor']
+print(vehicles_one) # salida: [carro', 'bicicleta', 'motor']
+
+vehicles_two = vehicles_one
+del vehicles_one[0] # elimina 'carro'
+print(vehicles_two) # salida: ['bicicleta', 'motor']
+
+
+2. Si deseas copiar una lista o parte de la lista, puedes hacerlo haciendo uso de rebanadas:
+
+colors = ['rojo', 'verde', 'naranja']
+
+copy_whole_colors = colors[:]  # copia la lista entera
+copy_part_colors = colors[0:2]  # copia parte de la lista
+
+
+3. También puede utilizar índices negativos para hacer uso de rebanadas. Por ejemplo:
+
+sample_list = ["A", "B", "C", "D", "E"]
+new_list = sample_list[2:-1]
+print(new_list)  # outputs: ['C', 'D']
+
+
+4. Los parámetros start y end son opcionales al partir en rebanadas una lista: list[start:end], por ejemplo:
+
+my_list = [1, 2, 3, 4, 5]
+slice_one = my_list[2: ]
+slice_two = my_list[ :2]
+slice_three = my_list[-2: ]
+
+print(slice_one)  # salida: [3, 4, 5]
+print(slice_two)  # salida: [1, 2]
+print(slice_three)  # salida: [4, 5]
+
+
+5. Puedes eliminar rebanadas utilizando la instrucción del:
+
+my_list = [1, 2, 3, 4, 5]
+del my_list[0:2]
+print(my_list)  # salida: [3, 4, 5]
+
+del my_list[:]
+print(my_list)  # delimina el contenido de la lista, genera: []
+
+
+6. Puedes probar si algunos elementos existen en una lista o no utilizando las palabras clave in y not in, por ejemplo:
+
+my_list = ["A", "B", 1, 2]
+
+print("A" in my_list)  # salida: True
+print("C" not in my_list)  # salida: True
+print(2 not in my_list)  # salida: False
+
+
+Ejercicio 1
+
+¿Cuál es la salida del siguiente fragmento de código?
+
+list_1 = ["A", "B", "C"]
+list_2 = list_1
+list_3 = list_2
+
+del list_1[0]
+del list_2[0]
+
+print(list_3)
+
+
+Revisar
+['C']
+
+Ejercicio 2
+
+¿Cuál es la salida del siguiente fragmento de código?
+
+list_1 = ["A", "B", "C"]
+list_2 = list_1
+list_3 = list_2
+
+del list_1[0]
+del list_2
+
+print(list_3)
+
+
+Revisar
+['B', 'C']
+
+Ejercicio 3
+
+¿Cuál es la salida del siguiente fragmento de código?
+
+list_1 = ["A", "B", "C"]
+list_2 = list_1
+list_3 = list_2
+
+del list_1[0]
+del list_2[:]
+
+print(list_3)
+
+
+Revisar
+[]
+
+Ejercicio 4
+
+¿Cuál es la salida del siguiente fragmento de código?
+
+list_1 = ["A", "B", "C"]
+list_2 = list_1[:]
+list_3 = list_2[:]
+
+del list_1[0]
+del list_2[0]
+
+print(list_3)
+
+Revisar
+['A', 'B', 'C']
+
+Ejercicio 5
+
+Inserta in o not in en lugar de ??? para que el código genere el resultado esperado.
+
+my_list = [1, 2, "in", True, "ABC"]
+
+print(1 ??? my_list)  # salida True
+print("A" ??? my_list)  # salida True
+print(3 ??? my_list)  # salida True
+print(False ??? my_list)  # salida False
+
+Revisar
+my_list = [1, 2, "in", True, "ABC"]
+
+print(1 in my_list)  # salida True
+print("A" not in my_list)  # salida True
+print(3 not in my_list)  # salida True
+print(False in my_list)  # salida False

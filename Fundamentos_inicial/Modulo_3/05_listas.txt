@@ -1,0 +1,533 @@
+¿Por qué necesitamos listas?
+Puede suceder que tengas que leer, almacenar, procesar y, finalmente, imprimir docenas, quizás cientos, tal vez incluso miles de números. ¿Entonces qué? ¿Necesitas crear una variable separada para cada valor? ¿Tendrás que pasar largas horas escribiendo sentencias como la que se muestra a continuación?
+
+var1 = int(input())
+var2 = int(input())
+var3 = int(input())
+var4 = int(input())
+var5 = int(input())
+var6 = int(input())
+:
+:
+
+
+Si no crees que esta sea una tarea complicada, toma un papel y escribe un programa que:
+
+Lea cinco números.
+Los imprima en orden desde el más pequeño hasta el más grande (Este tipo de procesamiento se denomina ordenamiento).
+Debes percatarte que ni siquiera tienes suficiente papel para completar la tarea.
+
+Hasta ahora, has aprendido como declarar variables que pueden almacenar exactamente un valor dado a la vez. Tales variables a veces se denominan escalares por analogía con las matemáticas. Todas las variables que has usado hasta ahora son realmente escalares.
+
+Piensa en lo conveniente que sería declarar una variable que podría almacenar más de un valor. Por ejemplo, cien, o mil o incluso diez mil. Todavía sería una y la misma variable, pero muy amplia y espaciosa. ¿Suena atractivo? Quizás, pero ¿cómo manejarías un contenedor así lleno de valores diferentes? ¿Cómo elegirías solo el que necesitas?
+
+
+¿Y si solo pudieras numerarlos? Y luego di: dame el valor número 2; asigna el valor número 15; aumenta el número del valor 10000.
+
+Te mostraremos como declarar tales variables de múltiples valores. Haremos esto con el ejemplo que acabamos de sugerir. Escribiremos un programa que ordene una secuencia de números. No seremos particularmente ambiciosos: asumiremos que hay exactamente cinco números.
+
+Vamos a crear una variable llamada numeros; se le asigna no solo un número, sino que se llena con una lista que consta de cinco valores (nota: la lista comienza con un corchete abierto y termina con un corchete cerrado; el espacio entre los corchetes es llenado con cinco números separados por comas).
+
+numbers = [10, 5, 7, 2, 1]
+
+
+Digamos lo mismo utilizando una terminología adecuada: numeros es una lista que consta de cinco valores, todos ellos números. También podemos decir que esta sentencia crea una lista de longitud igual a cinco (ya que contiene cinco elementos).
+
+Los elementos dentro de una lista pueden tener diferentes tipos. Algunos de ellos pueden ser enteros, otros son flotantes y otros pueden ser listas.
+
+Python ha adoptado una convención que indica que los elementos de una lista están siempre numerados desde cero. Esto significa que el elemento almacenado al principio de la lista tendrá el número cero. Como hay cinco elementos en nuestra lista, al último de ellos se le asigna el número cuatro. No olvides esto.
+
+Pronto te acostumbrarás y se convertirá en algo natural.
+
+Antes de continuar con nuestra discusión, debemos indicar lo siguiente: nuestra lista es una colección de elementos, pero cada elemento es un escalar.
+
+Indexando Listas
+¿Cómo cambias el valor de un elemento elegido en la lista?
+
+Vamos a asignar un nuevo valor de 111 al primer elemento en la lista. Lo hacemos de esta manera:
+
+numbers = [10, 5, 7, 2, 1]
+print("Contenido de la lista original:", numbers)  # Imprimiendo contenido de la lista original.
+
+numbers[0] = 111
+print("Nuevo contenido de la lista: ", numbers)  # Contenido de la lista actual.
+
+
+Y ahora queremos copiar el valor del quinto elemento al segundo elemento. ¿Puedes adivinar cómo hacerlo?
+
+numbers = [10, 5, 7, 2, 1]
+print("Contenido de la lista original:", numbers)  # Imprimiendo contenido de la lista original.
+
+numbers[0] = 111
+print("\nPrevio contenido de la lista:", numbers)  # Imprimiendo contenido de la lista anterior.
+
+numbers[1] = numbers[4]  # Copiando el valor del quinto elemento al segundo elemento.
+print("Nuevo contenido de la lista:", numbers)  # Imprimiendo el contenido de la lista actual.
+
+
+El valor dentro de los corchetes que selecciona un elemento de la lista se llama un índice, mientras que la operación de seleccionar un elemento de la lista se conoce como indexación.
+
+Vamos a utilizar la función print() para imprimir el contenido de la lista cada vez que realicemos los cambios. Esto nos ayudará a seguir cada paso con más cuidado y ver que sucede después de una modificación de la lista en particular.
+
+Nota: todos los índices utilizados hasta ahora son literales. Sus valores se fijan en el tiempo de ejecución, pero cualquier expresión también puede ser un índice. Esto abre muchas posibilidades.
+
+numbers = [10, 5, 7, 2, 1]
+print("Contenido de la lista:", numbers)  # Imprimiendo contenido de la lista original.
+
+Accediendo al contenido de la lista
+Se puede acceder a cada uno de los elementos de la lista por separado. Por ejemplo, se puede imprimir:
+
+print(numbers[0]) # Accediendo al primer elemento de la lista.
+
+
+Suponiendo que todas las operaciones anteriores se hayan completado con éxito, el fragmento enviará 111 a la consola.
+
+Como puedes ver en el editor, la lista también puede imprimirse como un todo, como aquí:
+
+print(numbers)  # Imprimiendo la lista completa.
+
+
+Como probablemente hayas notado antes, Python decora la salida de una manera que sugiere que todos los valores presentados forman una lista. La salida del fragmento de ejemplo anterior se ve así:
+
+[111, 1, 7, 2, 1]
+output
+
+
+La función len()
+La longitud de una lista puede variar durante la ejecución. Se pueden agregar nuevos elementos a la lista, mientras que otros pueden eliminarse de ella. Esto significa que la lista es una entidad muy dinámica.
+
+Si deseas verificar la longitud actual de la lista, puedes usar una función llamada len() (su nombre proviene de length - longitud).
+
+La función toma el nombre de la lista como un argumento y devuelve el número de elementos almacenados actualmente dentro de la lista (en otras palabras, la longitud de la lista).
+
+Observa la última línea de código en el editor, ejecuta el programa y verifica que valor imprimirá en la consola. ¿Puedes adivinar?
+
+numbers = [10, 5, 7, 2, 1]
+print("Contenido de la lista original:", numbers)  # Imprimiendo el contenido de la lista original.
+
+numbers[0] = 111
+print("\nContenido de la lista con cambio:", numbers)  # Imprimiendo contenido de la lista con 111.
+
+numbers[1] = numbers[4]  # Copiando el valor del quinto elemento al segundo elemento.
+print("Contenido de la lista con intercambio:", numbers)  # Imprimiendo contenido de la lista con intercambio.
+
+print("\nLongitud de la lista:", len(numbers))  # Imprimiendo la longitud de la lista.
+
+Eliminando elementos de una lista
+Cualquier elemento de la lista puede ser eliminado en cualquier momento, esto se hace con una instrucción llamada del (eliminar). Nota: es una instrucción, no una función.
+
+Tienes que apuntar al elemento que quieres eliminar, desaparecerá de la lista y la longitud de la lista se reducirá en uno.
+
+Mira el fragmento de abajo. ¿Puedes adivinar qué salida producirá? Ejecuta el programa en el editor y comprueba.
+
+del numbers[1]
+print(len(numbers))
+print(numbers)
+
+
+No puedes acceder a un elemento que no existe , no puedes obtener su valor ni asignarle un valor. Ambas instrucciones causarán ahora errores de tiempo de ejecución:
+
+print(numbers[4])
+numbers[4] = 1
+
+
+Agrega el fragmento de código anterior después de la última línea de código en el editor, ejecute el programa y verifique que sucede.
+
+Nota: hemos eliminado uno de los elementos de la lista; ahora solo hay cuatro elementos en la lista. Esto significa que el elemento número cuatro no existe.
+
+numbers = [10, 5, 7, 2, 1]
+print("Contenido de la lista original:", numbers)  # Imprimiendo el contenido de la lista original.
+
+numbers[0] = 111
+print("\nContenido de la lista con cambio:", numbers)  # Imprimiendo contenido de la lista con 111.
+
+numbers[1] = numbers[4]  # Copiando el valor del quinto elemento al segundo elemento.
+print("Contenido de la lista con intercambio:", numbers)  # Imprimiendo contenido de la lista con intercambio.
+
+print("\nLongitud de la lista:", len(numbers))  # Imprimiendo la longitud de la lista.
+
+###
+
+del numbers[1]  # Eliminando el segundo elemento de la lista.
+print("Longitud de la nueva lista:", len(numbers))  # Imprimiendo nueva longitud de la lista.
+print("\nNuevo contenido de la lista:", numbers)  # Imprimiendo el contenido de la lista actual.
+
+###
+
+
+Los índices negativos son válidos
+Puede parecer extraño, pero los índices negativos son válidos y pueden ser muy útiles.
+
+Un elemento con un índice igual a -1 es el último en la lista.
+
+print(numbers[-1])
+
+
+El código del ejemplo mostrará 1. Ejecuta el programa y comprueba.
+
+
+Del mismo modo, el elemento con un índice igual a -2 es el anterior al último en la lista.
+
+print(numbers[-2])
+
+
+El fragmento de ejemplo dará como salida un 2.
+
+El último elemento accesible en nuestra lista es numeros[-4] (el primero). ¡No intentes ir más lejos!
+
+numbers = [111, 7, 2, 1]
+print(numbers[-1])
+print(numbers[-2])
+
+Funciones frente a métodos
+Un método es un tipo específico de función: se comporta como una función y se parece a una función, pero difiere en la forma en que actúa y en su estilo de invocación.
+
+Una función no pertenece a ningún dato: obtiene datos, puede crear nuevos datos y (generalmente) produce un resultado.
+
+Un método hace todas estas cosas, pero también puede cambiar el estado de una entidad seleccionada.
+
+Un método es propiedad de los datos para los que trabaja, mientras que una función es propiedad de todo el código.
+
+
+Esto también significa que invocar un método requiere alguna especificación de los datos a partir de los cuales se invoca el método.
+
+Puede parecer desconcertante aquí, pero lo trataremos en profundidad cuando profundicemos en la programación orientada a objetos.
+
+En general, una invocación de función típica puede tener este aspecto:
+
+result = function(arg)
+
+
+La función toma un argumento, hace algo y devuelve un resultado.
+
+
+Una invocación de un método típico usualmente se ve así:
+
+result = data.method(arg)
+
+
+Nota: el nombre del método está precedido por el nombre de los datos que posee el método. A continuación, se agrega un punto, seguido del nombre del método y un par de paréntesis que encierran los argumentos.
+
+El método se comportará como una función, pero puede hacer algo más: puede cambiar el estado interno de los datos a partir de los cuales se ha invocado.
+
+Puedes preguntar: ¿por qué estamos hablando de métodos, y no de listas?
+
+Este es un tema esencial en este momento, ya que le mostraremos como agregar nuevos elementos a una lista existente. Esto se puede hacer con métodos propios de las listas, no por funciones.
+
+Agregando elementos a una lista: append() e insert()
+Un nuevo elemento puede ser añadido al final de la lista existente:
+
+list.append(value)
+
+
+Dicha operación se realiza mediante un método llamado append(). Toma el valor de su argumento y lo coloca al final de la lista que posee el método.
+
+La longitud de la lista aumenta en uno.
+
+El método insert() es un poco más inteligente: puede agregar un nuevo elemento en cualquier lugar de la lista, no solo al final.
+
+list.insert(location, value)
+
+
+Toma dos argumentos:
+
+El primero muestra la ubicación requerida del elemento a insertar. Nota: todos los elementos existentes que ocupan ubicaciones a la derecha del nuevo elemento (incluido el que está en la posición indicada) se desplazan a la derecha, para hacer espacio para el nuevo elemento.
+El segundo es el elemento a insertar.
+Observa el código en el editor. Ve como usamos los métodos append() e insert(). Presta atención a lo que sucede después de usar insert(): el primer elemento anterior ahora es el segundo, el segundo el tercero, y así sucesivamente.
+
+Agrega el siguiente fragmento después de la última línea de código en el editor:
+
+numbers.insert(1, 333)
+
+
+Imprime el contenido de la lista final en la pantalla y ve que sucede. El fragmento de código sobre el fragmento de código inserta 333 en la lista, por lo que es el segundo elemento. El segundo elemento anterior se convierte en el tercero, el tercero en el cuarto, y así sucesivamente.
+
+numbers = [111, 7, 2, 1]
+print(len(numbers))
+print(numbers)
+
+###
+
+numbers.append(4)
+
+print(len(numbers))
+print(numbers)
+
+###
+
+numbers.insert(0, 222)
+print(len(numbers))
+print(numbers)
+
+#
+
+Puedes iniciar la vida de una lista creándola vacía (esto se hace con un par de corchetes vacíos) y luego agregar nuevos elementos según sea necesario.
+
+Echa un vistazo al fragmento en el editor. Intenta adivinar su salida después de la ejecución del bucle for. Ejecuta el programa para comprobar si tenías razón.
+
+Será una secuencia de números enteros consecutivos del 1 (luego agrega uno a todos los valores agregados) hasta 5.
+
+
+Hemos modificado un poco el fragmento:
+
+my_list = []  # Creando una lista vacía.
+
+for i in range(5):
+    my_list.insert(0, i + 1)
+
+print(my_list)
+
+
+¿Qué pasará ahora? Ejecuta el programa y comprueba si esta vez también tenías razón.
+
+
+Deberías obtener la misma secuencia, pero en orden inverso (este es el mérito de usar el método insert()).
+
+my_list = []  # Creando una lista vacía.
+
+for i in range(5):
+    my_list.append(i + 1)
+
+print(my_list)
+
+Haciendo uso de las listas
+El bucle for tiene una variante muy especial que puede procesar las listas de manera muy efectiva. Echemos un vistazo a eso.
+
+Supongamos que deseas calcular la suma de todos los valores almacenados en la lista my_list.
+
+Necesitas una variable cuya suma se almacenará y se le asignará inicialmente un valor de 0 - su nombre será total. (Nota: no la vamos a nombrar sum ya que Python utiliza el mismo nombre para una de sus funciones integradas: sum(). Utilizar ese nombre sería considerado una mala práctica. Luego agrega todos los elementos de la lista usando el bucle for. Echa un vistazo al fragmento en el editor.
+
+Comentemos este ejemplo:
+
+A la lista se le asigna una secuencia de cinco valores enteros.
+La variable i toma los valores 0, 1,2,3, y 4, y luego indexa la lista, seleccionando los elementos siguientes: el primero, segundo, tercero, cuarto y quinto.
+Cada uno de estos elementos se agrega junto con el operador += a la variable suma, dando el resultado final al final del bucle.
+Observa la forma en que se ha empleado la función len(), hace que el código sea independiente de cualquier posible cambio en el contenido de la lista.
+
+El segundo aspecto del bucle for
+Pero el bucle for puede hacer mucho más. Puede ocultar todas las acciones conectadas a la indexación de la lista y entregar todos los elementos de la lista de manera práctica.
+
+Este fragmento modificado muestra como funciona:
+
+my_list = [10, 1, 8, 3, 5]
+total = 0
+
+for i in my_list:
+    total += i
+
+print(total)
+
+
+¿Qué sucede aquí?
+
+La instrucción for especifica la variable utilizada para navegar por la lista (i) seguida de la palabra clave in y el nombre de la lista siendo procesado (my_list).
+A la variable i se le asignan los valores de todos los elementos de la lista subsiguiente, y el proceso ocurre tantas veces como hay elementos en la lista.
+Esto significa que usa la variable i como una copia de los valores de los elementos, y no necesita emplear índices.
+La función len() tampoco es necesaria aquí.
+
+my_list = [10, 1, 8, 3, 5]
+total = 0
+
+for i in range(len(my_list)):
+    total += my_list[i]
+
+print(total)
+
+Listas en acción
+Dejemos de lado las listas por un breve momento y veamos un tema intrigante.
+
+Imagina que necesitas reorganizar los elementos de una lista, es decir, revertir el orden de los elementos: el primero y el quinto, así como el segundo y cuarto elementos serán intercambiados. El tercero permanecerá intacto.
+
+
+Pregunta: ¿Cómo se pueden intercambiar los valores de dos variables?
+
+Echa un vistazo al fragmento:
+
+variable_1 = 1
+variable_2 = 2
+
+variable_2 = variable_1
+variable_1 = variable_2
+
+
+Si haces algo como esto, perderás el valor previamente almacenado en variable_2. Cambiar el orden de las tareas no ayudará. Necesitas una tercera variable que sirva como almacenamiento auxiliar.
+
+Así es como puedes hacerlo:
+
+variable_1 = 1
+variable_2 = 2
+
+auxiliary = variable_1
+variable_1 = variable_2
+variable_2 = auxiliary
+
+
+Python ofrece una forma más conveniente de hacer el intercambio, echa un vistazo:
+
+variable_1 = 1
+variable_2 = 2
+
+variable_1, variable_2 = variable_2, variable_1
+
+
+Claro, efectivo y elegante, ¿no?
+
+Ahora puedes intercambiar fácilmente los elementos de la lista para revertir su orden:
+
+my_list = [10, 1, 8, 3, 5]
+
+my_list[0], my_list[4] = my_list[4], my_list[0]
+my_list[1], my_list[3] = my_list[3], my_list[1]
+
+print(my_list)
+
+
+Ejecuta el fragmento. Su salida debería verse así:
+
+[5, 3, 8, 1, 10]
+salida
+
+
+Se ve bien con cinco elementos.
+
+
+¿Seguirá siendo aceptable con una lista que contenga 100 elementos? No, no lo hará.
+
+¿Puedes usar el bucle for para hacer lo mismo automáticamente, independientemente de la longitud de la lista? Si, si puedes.
+
+Así es como lo hemos hecho:
+
+my_list = [10, 1, 8, 3, 5]
+length = len(my_list)
+
+for i in range(length // 2):
+    my_list[i], my_list[length - i - 1] = my_list[length - i - 1], my_list[i]
+
+print(my_list)
+
+
+Nota:
+
+Hemos asignado la variable length a la longitud de la lista actual (esto hace que nuestro código sea un poco más claro y más corto).
+Hemos preparado el bucle for para que se ejecute su cuerpo length // 2 veces (esto funciona bien para listas con longitudes pares e impares, porque cuando la lista contiene un número impar de elementos, el del medio permanece intacto).
+Hemos intercambiado el elemento i (desde el principio de la lista) por el que tiene un índice igual a (length-i-1) (desde el final de la lista); en nuestro ejemplo, for i igual a 0 a la (length-i-1) da 4; for i igual a 3, da 3: esto es exactamente lo que necesitábamos.
+Las listas son extremadamente útiles y las encontrarás muy a menudo.
+
+Puntos Clave
+
+1. La lista es un tipo de dato en Python que se utiliza para almacenar múltiples objetos. Es una colección ordenada y mutable de elementos separados por comas entre corchetes, por ejemplo:
+
+my_list = [1, None, True, "Soy una cadena", 256, 0]
+
+
+2. Las listas se pueden indexar y actualizar , por ejemplo:
+
+my_list = [1, None, True, 'Soy una cadena', 256, 0]
+print(my_list[3])  # salida: Soy una cadena
+print(my_list[-1])  # salida: 0
+
+my_list[1] = '?'
+print(my_list)  # salida: [1, '?', True, 'Soy una cadena', 256, 0]
+
+my_list.insert(0, "primero")
+my_list.append("último")
+print(my_list)  # outputs: ['primero', 1, '?', True, 'Soy una cadena', 256, 0, 'último']
+
+
+3. Las listas pueden estar anidadas, por ejemplo:
+
+my_list = [1, 'a', ["lista", 64, [0, 1], False]]
+
+
+Aprenderás más sobre el anidamiento en el módulo 3.7; por el momento, solo queremos que sepas que algo como esto también es posible.
+
+4. Los elementos de la lista y las listas se pueden eliminar, por ejemplo:
+
+my_list = [1, 2, 3, 4]
+del my_list[2]
+print(my_list)  # salida: [1, 2, 4]
+
+del my_list  # borra la lista entera
+
+
+Nuevamente, aprenderás más sobre esto en el módulo 3.6, no te preocupes. Por el momento, intenta experimentar con el código anterior y verifica cómo cambiarlo afecta la salida.
+
+5.Las listas pueden ser iteradas mediante el uso del bucle for, por ejemplo:
+
+my_list = ["blanco", "purpura", "azul", "amarillo", "verde"]
+
+for color in my_list:
+    print(color)
+
+
+6. La función len() se puede usar para verificar la longitud de la lista, por ejemplo:
+
+my_list = ["blanco", "purpura", "azul", "amarillo", "verde"]
+print(len(my_list))  # salida 5
+
+del my_list[2]
+print(len(my_list))  # salida 4
+
+
+7. Una invocación típica de función tiene el siguiente aspecto: result = function(arg), mientras que una invocación típica de un método se ve así: result = data.method(arg).
+
+
+Ejercicio 1
+
+¿Cuál es la salida del siguiente fragmento de código?
+
+lst = [1, 2, 3, 4, 5]
+lst.insert(1, 6)
+del lst[0]
+lst.append(1)
+
+print(lst)
+
+
+Revisar
+[6, 2, 3, 4, 5, 1]
+Ejercicio 2
+
+¿Cuál es la salida del siguiente fragmento de código?
+
+lst = [1, 2, 3, 4, 5]
+lst_2 = []
+add = 0
+
+for number in lst:
+    add += number
+    lst_2.append(add)
+
+print(lst_2)
+
+
+Revisar
+[1, 3, 6, 10, 15]
+Ejercicio 3
+
+¿Cuál es la salida del siguiente fragmento de código?
+
+lst = []
+del lst
+print(lst)
+
+
+Revisar
+NameError: name 'lst' is not defined
+Ejercicio 4
+
+¿Cuál es la salida del siguiente fragmento de código?
+
+lst = [1, [2, 3], 4]
+print(lst[1])
+print(len(lst))
+
+
+Revisar
+[2, 3]
+3
+
+
+
+
+
