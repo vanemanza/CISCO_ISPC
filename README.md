@@ -5,7 +5,6 @@ Repositorio con teoría y ejercicios del curso de Python de Cisco Netcad para la
 Links a quiz:
 
 
-https://edube.org/quiz/python-essentials-1-esp/pe1-module-2-quiz-4
 
 https://edube.org/quiz/python-essentials-1-esp/pe1-module-3-quiz-3
 
